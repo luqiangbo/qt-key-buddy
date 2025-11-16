@@ -1,0 +1,15 @@
+{
+  "name": "keybuddy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Modern Win11 style keyboard remap + screenshot + overlay + monitor (Qt/QML + C++)",
+  "scripts": {
+    "dev": "qml-live src/ui/Main.qml --port 8080",
+    "build:qmake": "scripts/build.bat",
+    "build:cmake": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/build-cmake.ps1"
+  },
+  "dependencies": {
+    "@fluentui/qml": "latest",
+    "qml-live": "latest"
+  }
+}
