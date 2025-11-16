@@ -57,6 +57,7 @@ qt_add_qml_module(KeyBuddy
 		${RES_DIR}/icons/keyboard.svg
 		${RES_DIR}/icons/save.svg
 		${RES_DIR}/icons/settings.svg
+		myfiles.ico
 )
 
 # 为资源设置稳定的别名，确保以 qrc:/icons/... 访问
@@ -80,6 +81,10 @@ set_source_files_properties(
 	${RES_DIR}/icons/settings.svg
 	PROPERTIES QT_RESOURCE_ALIAS "icons/settings.svg"
 )
+set_source_files_properties(
+	myfiles.ico
+	PROPERTIES QT_RESOURCE_ALIAS "icons/app.ico"
+)
 
 target_link_libraries(KeyBuddy PRIVATE
 	Qt6::Core
@@ -91,6 +96,8 @@ target_link_libraries(KeyBuddy PRIVATE
 
 if (WIN32)
 	target_link_libraries(KeyBuddy PRIVATE user32 gdi32)
+	# 为 EXE 设置应用图标
+	target_sources(KeyBuddy PRIVATE app_icon.rc)
 endif()
 
 # 将 qtquickcontrols2.conf 复制到可执行文件目录，便于运行期加载样式

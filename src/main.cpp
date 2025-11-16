@@ -3,12 +3,14 @@
 #include <QQmlContext>
 #include <QFile>
 #include <QUrl>
+#include <QIcon>
 #include "backend/Backend.h"
 
 int main(int argc, char *argv[]) {
 	QGuiApplication app(argc, argv);
 	QCoreApplication::setOrganizationName("KeyBuddy");
 	QCoreApplication::setApplicationName("KeyBuddy");
+	QGuiApplication::setWindowIcon(QIcon(QStringLiteral(":/icons/app.ico")));
 
 	QQmlApplicationEngine engine;
 
